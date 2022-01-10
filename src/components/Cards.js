@@ -6,7 +6,7 @@ const Cards= ()=>{
 
  const [index,setIndex] = useState(0);
   
- const {id,n} = people[index];
+ const {image,name,rol,description} = people[index];
 
  const next= ()=>{ 
     if(index<=4) {
@@ -30,12 +30,14 @@ const Cards= ()=>{
     }
 
  return(
-  <>
-    <p>{n}</p>
-    <p>{id}</p>
-    <button onClick={next}>Siguiente</button>
+  <div className=" bg-[#ffffff] w-6/12 h-3/5 flex items-center flex-col ">
+    <img src={image} alt={name} className="my-3"/>
+    <p>{name}</p>
+    <p>{rol}</p>
+    <p>{description}</p>
     <button onClick={previous}>Anterior</button>
-  </> 
+    <button onClick={next}>Siguiente</button>
+  </div> 
   );
 }
 
